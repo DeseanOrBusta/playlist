@@ -31,3 +31,27 @@ for (let Imglink of Imglinks){
   $("#playlist").append(`<img class="thumbnail" src= ${Imglink}>`)
   $("#playlist").append("<br>")
 }
+
+for (let Slength of Slengths){
+  $("#playlist").append(Slength)
+  $("#playlist").append("<br>")
+}
+
+for (let Slink of Slinks){
+  $("#playlist").append(Slink)
+  $("#playlist").append("<br>")
+}
+
+function addNewSong(name, artist, img, length, link){
+  Snames.push(name)
+  Sartists.push(artist)
+  Imglinks.push(img)
+  Slengths.push(length)
+  Slinks.push(link)
+}
+
+$("#add").click(function(){
+  var [song, artist] = $("#song").val().split(":")
+  var img = $("#image").val
+  var 
+});

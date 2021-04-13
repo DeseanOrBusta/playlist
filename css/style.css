@@ -7,12 +7,33 @@ h1{
   color:#fff799;
 }
 
-#playlist{
-  display:block;
+#playlist {
+  display: flex;
 }
 
-img.thumbnail{
-  width:225px;
-  height:225px;
+#Snames{
+margin-right:100px;
+   margin-top:15px;
+}
+
+#Sartists{
+margin-right:100px;
+   margin-top:15px;
+}
+
+#Simg img{
+  height:100px;
+  width:auto;
+  margin-right:100px;
   display:block;
+  margin-top:15px;
+}
+
+#playlist p{
+  height:100px;
+}
+
+#Slengths{
+margin-right:100px;
+margin-top:15px;
 }

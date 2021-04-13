@@ -1,15 +1,8 @@
-$("#add").click(function(){
-  let imageLink = $("#image").val();
-  let img='<img class="thumbnail" src="'+imageLink+'"/>';
-  $("#playlist").append(img);
-  
-});
-
-$("#add").click(function(){
-let imageLink = $("#image").val();
-  let img='<img class="thumbnail" src="'+imageLink+'"/>';
-  $("#playlist").append(img)
-});
+//$("#add").click(function(){
+//let imageLink = $("#image").val();
+ // let img='<img class="thumbnail" src="'+imageLink+'"/>';
+ // $("#playlist").append(img)
+//});
 
 let Snames= ["location", "sky"]
 let Sartists= ["playboi carti","playboi carti"]
@@ -18,29 +11,29 @@ let Imglinks=["https://images.genius.com/d3648154d6d90501b1fd53f863ebd4da.933x10
 let Slinks=["link","link1"]
 
 for (let Sname of Snames){
-  $("#playlist").append(Sname)
-  $("#playlist").append("<br>")
+  $("#Snames").append(Sname)
+  $("#Snames").append("<br>")
 }
 
 for (let Sartist of Sartists){
-  $("#playlist").append(Sartist)
-  $("#playlist").append("<br>")
+  $("#Sartists").append(Sartist)
+  $("#Sartists").append("<br>")
 }
 
 for (let Imglink of Imglinks){
-  $("#playlist").append(`<img class="thumbnail" src= ${Imglink}>`)
-  $("#playlist").append("<br>")
+  $("#Simg").append(`<img class="thumbnail" src= ${Imglink}>`)
+  $("#Simg").append("<br>")
 }
 
 for (let Slength of Slengths){
-  $("#playlist").append(Slength)
-  $("#playlist").append("<br>")
+  $("#Slengths").append(Slength)
+  $("#Slengths").append("<br>")
 }
 
-for (let Slink of Slinks){
-  $("#playlist").append(Slink)
-  $("#playlist").append("<br>")
-}
+//for (let Slink of Slinks){
+  //$("#playlist").append(Slink)
+  //$("#playlist").append("<br>")
+//}
 
 function addNewSong(name, artist, img, length, link){
   Snames.push(name)
@@ -49,9 +42,41 @@ function addNewSong(name, artist, img, length, link){
   Slengths.push(length)
   Slinks.push(link)
 }
-
+  
+                
 $("#add").click(function(){
-  var [song, artist] = $("#song").val().split(":")
-  var img = $("#image").val
-  var 
+  var [name, artist] = $("#song").val().split(":")
+  var img = $("#image").val()
+  var length = $("#length").val()
+  var link = $("#link").val()
+  addNewSong(name, artist, img, length, link)
+  displayAllSongs()
+  console.log(Snames)
 });
+
+function displayAllSongs(){
+  
+  $("#Snames").html("")
+  for (let Sname of Snames){
+  $("#Snames").append(`<p>${Sname}</p>`)
+}
+
+  $("#Sartists").html("")
+for (let Sartist of Sartists){
+  $("#Sartists").append(`<p>${Sartist}</p>`)
+}
+
+  $("#Simg").html("")
+for (let Imglink of Imglinks){
+  $("#Simg").append(`<img class="thumbnail" src= ${Imglink}>`)
+}
+
+  $("#Slengths").html("")
+for (let Slength of Slengths){
+  $("#Slengths").append(`<p>${Slength}</p>`)
+}
+
+}
+
+
+displayAllSongs()
